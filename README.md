@@ -8,7 +8,7 @@
 
 ```sh
 dotnet run \
-    --driveName D:\ \
+    --driveName "/" \
     --webhookUrl 【Webhook URL】 \
     --channel 【チャンネル名】 \
     --format "{0} GB"
@@ -18,7 +18,7 @@ dotnet run \
 
 ```sh
 dotnet FreeSpaceChecker.dll \
-    --driveName D:\ \
+    --driveName "/" \
     --webhookUrl 【Webhook URL】 \
     --channel 【チャンネル名】 \
     --format "{0} GB"
