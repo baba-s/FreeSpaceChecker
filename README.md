@@ -6,20 +6,20 @@
 
 ### プロジェクトを実行する場合
 
-```bat
-dotnet run ^
-    --driveName D:\ ^
-    --webhookUrl 【Webhook URL】 ^
-    --channel 【チャンネル名】 ^
+```sh
+dotnet run \
+    --driveName D:\ \
+    --webhookUrl 【Webhook URL】 \
+    --channel 【チャンネル名】 \
     --format "{0} GB"
 ```
 
 ### 実行ファイルを使用する場合
 
-```bat
-dotnet FreeSpaceChecker.dll ^
-    --driveName D:\ ^
-    --webhookUrl 【Webhook URL】 ^
-    --channel 【チャンネル名】 ^
+```sh
+dotnet FreeSpaceChecker.dll \
+    --driveName D:\ \
+    --webhookUrl 【Webhook URL】 \
+    --channel 【チャンネル名】 \
     --format "{0} GB"
 ```
