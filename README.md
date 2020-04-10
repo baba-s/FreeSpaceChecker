@@ -31,13 +31,13 @@ pipeline {
    agent any
 
    stages {
-      stage('git clone') {
+      stage( 'git clone' ) {
          steps {
             git branch: 'feature/v1.0.0', url: 'https://github.com/baba-s/FreeSpaceChecker.git'
          }
       }
-      stage( 'dotnet' ){
-          steps{
+      stage( 'dotnet' ) {
+          steps {
             sh 'dotnet FreeSpaceChecker.dll --driveName "/" --webhookUrl 【Webhook URL】 --channel "" --format "{0} GB"'
           }
       }
