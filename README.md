@@ -4,7 +4,7 @@
 
 ## 使用例
 
-### プロジェクトを実行する場合
+### シェルスクリプトでプロジェクトを実行する場合
 
 ```sh
 dotnet run \
@@ -14,7 +14,7 @@ dotnet run \
     --format "{0} GB"
 ```
 
-### 実行ファイルを使用する場合
+### シェルスクリプトで実行ファイルを使用する場合
 
 ```sh
 dotnet FreeSpaceChecker.dll \
@@ -22,4 +22,25 @@ dotnet FreeSpaceChecker.dll \
     --webhookUrl 【Webhook URL】 \
     --channel 【チャンネル名】 \
     --format "{0} GB"
+```
+
+### Jenkinsfile で実行ファイルを使用する場合
+
+```jenkinsfile
+pipeline {
+   agent any
+
+   stages {
+      stage('git clone') {
+         steps {
+            git branch: 'feature/v1.0.0', url: 'https://github.com/baba-s/FreeSpaceChecker.git'
+         }
+      }
+      stage( 'dotnet' ){
+          steps{
+            sh 'dotnet FreeSpaceChecker.dll --driveName "/" --webhookUrl 【Webhook URL】 --channel "" --format "{0} GB"'
+          }
+      }
+   }
+}
 ```
